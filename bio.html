@@ -1,143 +1,111 @@
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-              rel="stylesheet"
-              integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-              crossorigin="anonymous">
-
-        <link rel="stylesheet"
-              href="https://fonts.googleapis.com/css?family=Roboto|Inconsolata">
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-                crossorigin="anonymous"></script>
-
-        <script>
-
-            function returnHome() {
-                window.location.href = "index.html";
-            }
-
-        </script>
-
-        <link href="styles.css"
-              rel="stylesheet">
-
-        <title>neurobiology</title>
-
-        <div class="header">
-            <button onclick="returnHome()" type="button" class="btn-close" aria-label="Close" style="float: left;"></button>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <title>anjie — neuroscience</title>
+</head>
+<body class="slide-in">
+    <nav class="topbar">
+        <div class="topbar-inner">
+            <a href="index.html" class="breadcrumb-link">anjie</a>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-current">neuroscience</span>
         </div>
+    </nav>
 
-    </head>
+    <a href="index.html" class="back-arrow" aria-label="Back to home">‹</a>
 
-    <body>
-        <div class="container">
-            <span>
-                <p>
-                    hi all!
-                </p>
-                <p>
-                    i'm <b>anjie</b> and i'm a <b><i>college student</i></b> currently pursuing a <b><u>M.S., Biology</u></b> at <i><b>University of California, San Diego</b></i>.
-                    <br>
-                </p>
-                <!-- <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th scope="col"></th>
-                      <th scope="col">Education</th>
-                      <th>Degree</th>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">2023 - 2024</th>
-                      <td>University of California, San Diego</td>
-                      <td>Biology, MS</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2020 - 2023</th>
-                      <td>University of California, San Diego</td>
-                      <td>Neurobiology, BS</td>
-                    </tr>
-                  </tbody>
-                </table> -->
-                <table class="table table-hover">
-                    <thead>
-                      <tr>
-                        <th scope="col"></th>
-                        <th scope="col" colspan="2">Work Experience</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">Sep 2023 - Present</th>
-                        <td>Salk Institute for Biological Sciences, <i><b>Allen Lab</b></i></td>
-                        <td>
-                          <ul>
-                            <li>
-                              Developed macros and scripts to fully automate image data processing in Python and ImageJ Macro Language, increasing efficiency
-                            </li>
-                            <li>
-                              Optimized CellProfiler pipelines for enhanced image analysis and data extraction
-                            </li>
-                            <li>
-                              Performed sample preparation procedures such as immunostaining, brain slicing and slide mounting wity cryostats
-                            </li>
-                          </ul>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Mar 2023 - Present</th>
-                        <td>UC San Diego, <i>Swartz Center for Computational Neuroscience, <b>Jung Lab</b></i></td>
-                        <td>
-                          <ul>
-                            <li>
-                              Piloted and developed experimental methods for a novel study on how music, superimposed with sound frequencies, can contribute to Alzheimer's prevention
-                            </li>
-                            <li>
-                              Developed and deployed fully automated behavioral experiment using PsychoPy on Python
-                            </li>
-                            <li>
-                              Analyzed and visualized EEG data using EEGLAB on MATLAB
-                            </li>
-                          </ul>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Jun 2023 - Aug 2023</th>
-                        <td>National University of Singapore, <i>Department of Psychological Medicine, <b>Feng Lab</b></i></td>
-                        <td>
-                          <ul>
-                            <li>
-                              Processed and analyzed large population datasets using SPSS
-                            </li>
-                            <li>
-                              Aided in the writing of multiple journal manuscripts on healthy ageing
-                            </li>
-                          </ul>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Apr 2022 - Mar 2023</th>
-                        <td>UC San Diego, <i>School of Biological Sciences</i></td>
-                        <td>
-                          <ul>
-                            <li>
-                              Held office hours and discussion sections to aid students in better understanding course topics
-                            </li>
-                            <li>
-                              Graded exams and homework, reaching out to and holding extra office hours to help students who aren't performing to their expectations
-                            </li>
-                          </ul>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-            </span>
-        </div>
-    </body>
+    <div class="page">
+        <span class="subpage-cover">🧬</span>
+        <h1 class="subpage-title">neuroscience researcher</h1>
+        <p class="subpage-desc">
+            i'm a college student currently pursuing a <strong>M.S., Biology</strong> at
+            <em>University of California, San Diego</em>.
+        </p>
+
+        <p class="section-heading">Work Experience</p>
+
+        <table class="db-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Role</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="white-space:nowrap">Sep 2023 →</td>
+                    <td>
+                        <strong>Salk Institute</strong>
+                        <br><span class="tag tag-purple">Allen Lab</span>
+                    </td>
+                    <td>
+                        <ul class="bullet-list">
+                            <li>Developed macros and scripts to fully automate image data processing in Python and ImageJ Macro Language</li>
+                            <li>Optimized CellProfiler pipelines for enhanced image analysis and data extraction</li>
+                            <li>Performed sample preparation — immunostaining, brain slicing, slide mounting with cryostats</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="white-space:nowrap">Mar 2023 →</td>
+                    <td>
+                        <strong>UC San Diego</strong>
+                        <br><span class="tag tag-blue">Jung Lab</span>
+                    </td>
+                    <td>
+                        <ul class="bullet-list">
+                            <li>Piloted experimental methods for a novel study on music-based Alzheimer's prevention</li>
+                            <li>Developed fully automated behavioral experiments using PsychoPy</li>
+                            <li>Analyzed and visualized EEG data using EEGLAB on MATLAB</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="white-space:nowrap">Jun – Aug 2023</td>
+                    <td>
+                        <strong>National University of Singapore</strong>
+                        <br><span class="tag tag-green">Feng Lab</span>
+                    </td>
+                    <td>
+                        <ul class="bullet-list">
+                            <li>Processed and analyzed large population datasets using SPSS</li>
+                            <li>Aided in writing multiple journal manuscripts on healthy ageing</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="white-space:nowrap">Apr 2022 – Mar 2023</td>
+                    <td>
+                        <strong>UC San Diego</strong>
+                        <br><span class="tag tag-orange">Teaching</span>
+                    </td>
+                    <td>
+                        <ul class="bullet-list">
+                            <li>Held office hours and discussion sections for biology courses</li>
+                            <li>Graded exams and homework, held extra sessions for struggling students</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.querySelectorAll('.breadcrumb-link, .back-arrow').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                var href = this.getAttribute('href') || 'index.html';
+                if (href.indexOf('index.html') !== -1) href = 'index.html?back=1';
+                document.body.classList.remove('slide-in');
+                document.body.classList.add('slide-out-back');
+                setTimeout(function() {
+                    window.location.href = href;
+                }, 250);
+            });
+        });
+    </script>
+</body>
 </html>
