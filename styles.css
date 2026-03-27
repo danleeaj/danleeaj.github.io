@@ -83,7 +83,12 @@ a:hover {
     height: 148px;
     margin-bottom: 1rem;
     cursor: pointer;
-    transform: rotate(-15deg);
+    animation: pin-rock 2s ease-in-out infinite alternate;
+}
+
+@keyframes pin-rock {
+    from { transform: rotate(-15deg); }
+    to   { transform: rotate(-20deg); }
 }
 
 .landing-avatar {
@@ -129,6 +134,36 @@ a:hover {
 }
 
 /* ===== ROLE LINKS ===== */
+
+/* "daniel" hover wiggle */
+.daniel-hover {
+    display: inline-block;
+    cursor: default;
+    transition: transform 0.2s ease;
+}
+
+.daniel-hover:hover {
+    animation: daniel-wave 0.5s ease;
+}
+
+@keyframes daniel-wave {
+    0%   { transform: rotate(0deg); }
+    25%  { transform: rotate(-4deg); }
+    50%  { transform: rotate(4deg); }
+    75%  { transform: rotate(-2deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Ellipsis → role text swap */
+.role-ellipsis {
+    transition: color 0.2s ease;
+}
+
+.role-ellipsis.active {
+    color: var(--text);
+    font-weight: 600;
+}
+
 .role-list {
     display: flex;
     flex-direction: column;

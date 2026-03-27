@@ -16,20 +16,20 @@
                 </div>
             </div>
             <h1 class="landing-title">hellooo, i'm anjie</h1>
-            <p class="landing-subtitle"><b>daniel</b> also works! and i'm a ...</p>
+            <p class="landing-subtitle"><b class="daniel-hover">daniel</b> also works! and i'm a <span id="role-ellipsis" class="role-ellipsis">...</span></p>
 
             <div class="role-list">
-                <a href="cse.html" class="role-link">
+                <a href="dev.html" class="role-link" data-role="developer">
                     <span class="role-link-icon">💻</span>
                     <span class="role-link-text">developer</span>
                     <span class="role-link-arrow">›</span>
                 </a>
-                <a href="mus.html" class="role-link">
+                <a href="mus.html" class="role-link" data-role="singer-songwriter &amp; producer">
                     <span class="role-link-icon">🎵</span>
                     <span class="role-link-text">singer-songwriter &amp; producer</span>
                     <span class="role-link-arrow">›</span>
                 </a>
-                <a href="bio.html" class="role-link">
+                <a href="bio.html" class="role-link" data-role="neuroscience researcher">
                     <span class="role-link-icon">🧬</span>
                     <span class="role-link-text">neuroscience researcher</span>
                     <span class="role-link-arrow">›</span>
@@ -55,6 +55,24 @@
                 }, 250);
             });
         });
+
+        // Role hover → update ellipsis text
+        (function() {
+            var ellipsis = document.getElementById('role-ellipsis');
+            var defaultText = '...';
+
+            document.querySelectorAll('.role-link[data-role]').forEach(function(link) {
+                link.addEventListener('mouseenter', function() {
+                    var role = this.getAttribute('data-role');
+                    ellipsis.textContent = role;
+                    ellipsis.classList.add('active');
+                });
+                link.addEventListener('mouseleave', function() {
+                    ellipsis.classList.remove('active');
+                    ellipsis.textContent = defaultText;
+                });
+            });
+        })();
 
         // Avatar float + lean toward cursor
         (function() {
