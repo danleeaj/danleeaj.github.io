@@ -37,10 +37,38 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>GraderAPI</strong></td>
+                    <td><strong>Musicboxd</strong></td>
+                    <td><span class="tag tag-green">Next.js</span> <span class="tag tag-purple">Supabase</span> <span class="tag tag-blue">PostgreSQL</span></td>
+                    <td>
+                        Letterboxd, but for music — log, rate, and review albums
+                        <ul class="bullet-list" style="margin-top:0.4rem">
+                            <li>MusicBrainz import pipeline with cover art handling</li>
+                            <li>Clerk + Supabase JWT auth integration</li>
+                            <li>Star rating system, album/track/review UI</li>
+                            <li>Row-level security policies for user data</li>
+                        </ul>
+                    </td>
+                    <td><a href="https://github.com/danleeaj/musicboxd">Github</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Subs</strong></td>
+                    <td><span class="tag tag-green">React</span> <span class="tag tag-blue">Tauri</span> <span class="tag tag-purple">FastAPI</span></td>
+                    <td>
+                        Desktop app for video transcription and subtitle translation
+                        <ul class="bullet-list" style="margin-top:0.4rem">
+                            <li>Parallel Whisper API processing — ~5× speedup</li>
+                            <li>Silence-based audio chunking for accuracy</li>
+                            <li>GPT translation with sliding context windows</li>
+                            <li>SRT subtitle burning via ffmpeg</li>
+                        </ul>
+                    </td>
+                    <td><a href="https://github.com/danleeaj/subs">Github</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Summate AI</strong></td>
                     <td><span class="tag tag-blue">Python</span> <span class="tag tag-purple">AWS</span></td>
                     <td>
-                        LLM-powered auto-grader API using a multi-agent debate framework
+                        Multi-agent debate framework for grading — boosted accuracy from 64% to 90%
                         <ul class="bullet-list" style="margin-top:0.4rem">
                             <li>REST API via API Gateway for querying and feedback</li>
                             <li>Serverless functions with AWS Lambda</li>
@@ -49,6 +77,39 @@
                         </ul>
                     </td>
                     <td><a href="https://summate-ai.streamlit.app/">Demo</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Feynman</strong></td>
+                    <td><span class="tag tag-blue">Python</span> <span class="tag tag-green">FastAPI</span> <span class="tag tag-purple">WebSocket</span></td>
+                    <td>
+                        Multimodal AI tutoring platform — built at HackPrinceton 2025
+                        <ul class="bullet-list" style="margin-top:0.4rem">
+                            <li>Real-time interaction via WebSocket + FastAPI</li>
+                            <li>Grok Vision for visual understanding</li>
+                            <li>ElevenLabs voice synthesis for spoken explanations</li>
+                        </ul>
+                    </td>
+                    <td><a href="https://github.com/danleeaj/feynman">Github</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Flow AI</strong></td>
+                    <td><span class="tag tag-green">JavaScript</span> <span class="tag tag-purple">Chrome API</span></td>
+                    <td>
+                        Privacy-first Chrome extension using on-device Gemini Nano
+                        <ul class="bullet-list" style="margin-top:0.4rem">
+                            <li>Built for Chrome Built-In AI Hackathon</li>
+                            <li>All inference runs locally — no data leaves your browser</li>
+                        </ul>
+                    </td>
+                    <td><a href="https://github.com/danleeaj/flow-ai">Github</a></td>
+                </tr>
+                <tr>
+                    <td><strong>CopyRepo</strong></td>
+                    <td><span class="tag tag-blue">Python</span> <span class="tag tag-purple">PyPI</span></td>
+                    <td>
+                        CLI tool to copy repo contents to clipboard — published on PyPI
+                    </td>
+                    <td><a href="https://pypi.org/project/copyrepo/">PyPI</a></td>
                 </tr>
                 <tr>
                     <td><strong>d_wordle.py</strong></td>
