@@ -10,6 +10,9 @@
     <div class="page landing">
         <div class="landing-content">
             <div class="landing-avatar-wrap" id="avatar-wrap">
+                <img src="assets/bracket.png" alt="" aria-hidden="true" class="hidden-object" id="obj-bracket">
+                <img src="assets/guitar.png" alt="" aria-hidden="true" class="hidden-object" id="obj-guitar">
+                <img src="assets/microscope.png" alt="" aria-hidden="true" class="hidden-object" id="obj-microscope">
                 <img src="assets/me.png" alt="Enamel pin of Anjie" class="landing-avatar" id="avatar-img">
                 <div class="landing-avatar-shadow" id="avatar-shadow">
                     <img src="assets/me.png" alt="" aria-hidden="true">
@@ -71,6 +74,22 @@
                     ellipsis.classList.remove('active');
                     ellipsis.textContent = defaultText;
                 });
+            });
+        })();
+
+        // Avatar click → explode/collapse hidden objects
+        (function() {
+            var wrap = document.getElementById('avatar-wrap');
+            var objects = document.querySelectorAll('.hidden-object');
+            var exploded = false;
+
+            wrap.addEventListener('click', function() {
+                if (exploded) return;
+                objects.forEach(function(obj) {
+                    obj.classList.remove('collapse');
+                    obj.classList.add('explode');
+                });
+                exploded = true;
             });
         })();
 
