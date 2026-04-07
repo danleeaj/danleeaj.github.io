@@ -1,114 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles.css" rel="stylesheet">
-    <title>anjie — neuroscience</title>
-</head>
-<body class="slide-in">
-    <nav class="topbar">
-        <div class="topbar-inner">
-            <a href="index.html" class="breadcrumb-link">anjie</a>
-            <span class="breadcrumb-sep">/</span>
-            <span class="breadcrumb-current">neuroscience</span>
-        </div>
-    </nav>
-
-    <a href="index.html" class="back-arrow" aria-label="Back to home">‹</a>
-
-    <div class="page">
-        <span class="subpage-cover">🧬</span>
-        <h1 class="subpage-title">i was a researcher!</h1>
-        <p class="subpage-desc">
-            I currently hold a <strong>M.S., Biology</strong> and <strong>B.S., Neurobiology</strong> from
-            <b><em>University of California, San Diego</em></b>.
-            During my time at UCSD, I did research with Dr. Aksinya Derevyanko under the mentorship of Dr. Nicola Allen at the Salk Institute.
-            My thesis will be available <a href="https://www.proquest.com/docview/3226851826">here</a> once the embargo is lifted. <br/><br/>
-            During this period, I explored the potential of machine learning and computer vision in counting and identifying cells in immunohistochemical images in the context of Alzheimer's disease in mice.
-        </p>
-
-        <p class="section-heading">Work Experience</p>
-
-        <table class="db-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Role</th>
-                    <th>Details</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="white-space:nowrap">Sep 2023 - May 2025</td>
-                    <td>
-                        <strong>Salk Institute</strong>
-                        <br><span class="tag tag-purple">Allen Lab</span>
-                    </td>
-                    <td>
-                        <ul class="bullet-list">
-                            <li>Developed macros and scripts to fully automate image data processing in Python and ImageJ Macro Language</li>
-                            <li>Optimized CellProfiler pipelines for enhanced image analysis and data extraction</li>
-                            <li>Performed sample preparation — immunostaining, brain slicing, slide mounting with cryostats</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="white-space:nowrap">Mar 2023 - Jun 2023</td>
-                    <td>
-                        <strong>UC San Diego</strong>
-                        <br><span class="tag tag-blue">Jung Lab</span>
-                    </td>
-                    <td>
-                        <ul class="bullet-list">
-                            <li>Piloted experimental methods for a novel study on music-based Alzheimer's prevention</li>
-                            <li>Developed fully automated behavioral experiments using PsychoPy</li>
-                            <li>Analyzed and visualized EEG data using EEGLAB on MATLAB</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="white-space:nowrap">Jun 2023 - Aug 2023</td>
-                    <td>
-                        <strong>National University of Singapore</strong>
-                        <br><span class="tag tag-green">Feng Lab</span>
-                    </td>
-                    <td>
-                        <ul class="bullet-list">
-                            <li>Processed and analyzed large population datasets using SPSS</li>
-                            <li>Aided in writing multiple journal manuscripts on healthy ageing</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="white-space:nowrap">Apr 2022 – Mar 2023</td>
-                    <td>
-                        <strong>UC San Diego</strong>
-                        <br><span class="tag tag-orange">Teaching</span>
-                    </td>
-                    <td>
-                        <ul class="bullet-list">
-                            <li>Held office hours and discussion sections for biology courses</li>
-                            <li>Graded exams and homework, held extra sessions for struggling students</li>
-                        </ul>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url=/neuroscience" />
+    <title>Redirecting…</title>
     <script>
-        document.querySelectorAll('.breadcrumb-link, .back-arrow').forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                var href = this.getAttribute('href') || 'index.html';
-                if (href.indexOf('index.html') !== -1) href = 'index.html?back=1';
-                document.body.classList.remove('slide-in');
-                document.body.classList.add('slide-out-back');
-                setTimeout(function() {
-                    window.location.href = href;
-                }, 250);
-            });
-        });
+      window.location.replace("/neuroscience" + window.location.search + window.location.hash);
     </script>
-</body>
+  </head>
+  <body></body>
 </html>

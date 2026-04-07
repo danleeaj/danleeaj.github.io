@@ -1,85 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles.css" rel="stylesheet">
-    <title>anjie — music</title>
-</head>
-<body class="slide-in">
-    <nav class="topbar">
-        <div class="topbar-inner">
-            <a href="index.html" class="breadcrumb-link">anjie</a>
-            <span class="breadcrumb-sep">/</span>
-            <span class="breadcrumb-current">music</span>
-        </div>
-    </nav>
-
-    <a href="index.html" class="back-arrow" aria-label="Back to home">‹</a>
-
-    <div class="page">
-        <span class="subpage-cover">🎵</span>
-        <h1 class="subpage-title">singer-songwriter &amp; producer</h1>
-        <p class="subpage-desc">
-            based in suzhou / singapore / san diego — i've been making music for the past 8 years. when i started college during the pandemic i thought, let's actually produce these songs and release them. so that's what i did. curated songs on <a href="https://open.spotify.com/artist/0f6uqts7zv87P3xQbF2HMu">spotify</a>, full collection on <a href="https://anjie.bandcamp.com/">bandcamp</a>.
-        </p>
-
-        <p class="section-heading">Discography</p>
-
-        <div class="toggle-list">
-            <div class="toggle-block">
-                <div class="toggle-header" onclick="this.parentElement.classList.toggle('open')">
-                    <span class="toggle-caret">▶</span>
-                    <span class="toggle-title">
-                        <strong>坐车去海边</strong> <span class="tag">suzhou</span>
-                        <br><span style="color:var(--text-secondary);font-size:0.85rem">a song about traveling the world</span>
-                    </span>
-                </div>
-                <div class="toggle-body">
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/31UWx5Z5b6inZCL0EJ6ucy?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="toggle-block">
-                <div class="toggle-header" onclick="this.parentElement.classList.toggle('open')">
-                    <span class="toggle-caret">▶</span>
-                    <span class="toggle-title">
-                        <strong>一世纪相爱</strong> <span class="tag">for the centuries</span>
-                        <br><span style="color:var(--text-secondary);font-size:0.85rem">first single off my upcoming album</span>
-                    </span>
-                </div>
-                <div class="toggle-body">
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2KdBl3cDs1zK0agPLXM9xu?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="toggle-block">
-                <div class="toggle-header" onclick="this.parentElement.classList.toggle('open')">
-                    <span class="toggle-caret">▶</span>
-                    <span class="toggle-title">
-                        <strong>有一个地方</strong> <span class="tag">there was a place</span>
-                        <br><span style="color:var(--text-secondary);font-size:0.85rem">my first ever album</span>
-                    </span>
-                </div>
-                <div class="toggle-body">
-                    <iframe style="border:0;width:100%;height:439px;" src="https://bandcamp.com/EmbeddedPlayer/album=3545554598/size=large/bgcol=ffffff/linkcol=0687f5/artwork=none/transparent=true/" seamless><a href="https://anjie.bandcamp.com/album/there-was-a-place">有一個地方 there was a place by 李安杰</a></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url=/music" />
+    <title>Redirecting…</title>
     <script>
-        document.querySelectorAll('.breadcrumb-link, .back-arrow').forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                var href = this.getAttribute('href') || 'index.html';
-                if (href.indexOf('index.html') !== -1) href = 'index.html?back=1';
-                document.body.classList.remove('slide-in');
-                document.body.classList.add('slide-out-back');
-                setTimeout(function() {
-                    window.location.href = href;
-                }, 250);
-            });
-        });
+      window.location.replace("/music" + window.location.search + window.location.hash);
     </script>
-</body>
+  </head>
+  <body></body>
 </html>
