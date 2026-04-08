@@ -14,53 +14,48 @@ function useIsMobile(breakpoint = 640) {
 export const projects = {
   ideating: [
     {
-      id: "DAN-12", name: "Polyglot", desc: "Multi-language interactive notebook", tech: "WebAssembly",
-      details: "An interactive notebook environment that lets you write and execute code in multiple languages within a single document. Powered by WebAssembly, each language runs in a sandboxed runtime directly in the browser — no server needed. Think Jupyter, but polyglot by default. The goal is seamless interop between Python, Rust, Go, and JS cells, with shared state across language boundaries.",
-      screenshots: [],
-    },
-    {
-      id: "DAN-13", name: "Audio Visualizer", desc: "Real-time audio reactive visuals", tech: "Web Audio API",
-      details: "A browser-based audio visualizer that generates reactive, GPU-accelerated visuals from any audio input (mic, file, or system audio). Uses the Web Audio API's AnalyserNode for FFT data and pipes frequency/waveform data into WebGL shaders. Planned features include beat detection, customizable visual presets, and MIDI controller mapping for live performance.",
+      id: "ST-01", name: "SpellTruth", desc: "Text-based mystery game", tech: "C++ · HTML",
+      details: "A collaborative multiplayer text-based mystery game built with emoo. Players investigate a mystery together by typing commands into a terminal-like interface. Inspired by Type Help's minimalist CLI-driven storytelling, the game unfolds through typed interactions.",
       screenshots: [],
     },
   ],
   inProgress: [
     {
-      id: "DAN-08", name: "QR Ordering", desc: "Restaurant collaborative ordering with real-time sync", tech: "Next.js · Supabase · Toast API", priority: "high",
-      details: "A full-stack restaurant ordering system where diners scan a QR code at their table and collaboratively build an order in real time. Built with Next.js and Supabase Realtime for instant sync across devices at the same table. Integrates with Toast POS API for menu ingestion and order submission. Features include split-bill calculations, dietary filters, and a kitchen dashboard with live order tracking.",
+      id: "MB-01", name: "Musicboxd", desc: "Letterboxd for music", tech: "Next.js · Supabase · Apple MusicKit", priority: "high",
+      details: "A social platform for music lovers to log, rate, and review albums. Album metadata is sourced from MusicBrainz and enriched with cover art from the Cover Art Archive. Users can build a listening diary, create ranked lists, follow friends, and discover albums through community reviews. The feed algorithm surfaces albums trending among people you follow.",
       screenshots: [],
     },
     {
-      id: "DAN-05", name: "Musicboxd", desc: "Letterboxd for music — review, rate, discover albums", tech: "Next.js · Supabase · MusicBrainz", priority: "high",
-      details: "A social platform for music lovers to log, rate, and review albums — inspired by Letterboxd's approach to film. Album metadata is sourced from MusicBrainz and enriched with cover art from the Cover Art Archive. Users can build a listening diary, create ranked lists, follow friends, and discover albums through community reviews. The feed algorithm surfaces albums trending among people you follow.",
-      screenshots: [],
-    },
-    {
-      id: "DAN-09", name: "Subs", desc: "Video transcription & translation with parallel chunking", tech: "Tauri · React · Whisper API", priority: "med",
-      details: "A native desktop app (via Tauri) for transcribing and translating video files. Videos are split into parallel chunks and sent to OpenAI's Whisper API concurrently for fast transcription. The React frontend provides a timeline editor for correcting transcripts and syncing subtitles. Supports SRT/VTT export and batch processing of multiple files. Translation is handled via a secondary LLM pass with context-aware sentence merging.",
+      id: "SUB-01", name: "Subs", desc: "Video transcription & translation with parallel chunking", tech: "Tauri · React · Whisper API", priority: "med",
+      details: "A native desktop app (via Tauri) for transcribing and translating video files. Videos are split into parallel chunks and sent to OpenAI's Whisper API concurrently for fast transcription. The React frontend provides a timeline editor for correcting transcripts and syncing subtitles. Supports SRT export and batch processing of multiple files. Translation is handled via a secondary LLM pass with context-aware sentence merging.",
       screenshots: [],
     },
   ],
   completed: [
     {
-      id: "DAN-01", name: "Summate AI", desc: "Multi-agent debate grading, 64% → 90% accuracy", tech: "Ollama · Local inference",
-      details: "An AI-powered debate grading system that uses multiple local LLM agents to evaluate argumentative essays. Each agent scores independently on criteria like evidence quality, logical structure, and rebuttal strength, then a meta-agent aggregates scores with weighted consensus. Running entirely on Ollama for privacy and cost, the system improved grading accuracy from 64% to 90% against human evaluator benchmarks. Built as a research project exploring multi-agent agreement protocols.",
+      id: "SUM-01", name: "Summate AI", desc: "Multi-agent debate grading", tech: "Ollama · Local inference",
+      details: "An AI-powered debate grading system that uses multiple local LLM agents to evaluate free response questions. tbd",
       screenshots: [],
     },
     {
-      id: "DAN-03", name: "Feynman", desc: "Multimodal AI tutor — HackPrinceton 2025, 48hrs", tech: "FastAPI · Grok Vision · ElevenLabs",
-      details: "A multimodal AI tutoring system built in 48 hours at HackPrinceton 2025. Students can photograph a problem (handwritten or printed), and Grok Vision extracts and interprets the content. The FastAPI backend orchestrates a Socratic teaching flow — rather than giving answers directly, it asks guiding questions. ElevenLabs provides natural voice explanations, making it feel like a real tutor. Supports math, physics, and chemistry problem types.",
+      id: "FEY-01", name: "Feynman", desc: "Multimodal AI tutor", tech: "FastAPI · Grok Vision · ElevenLabs",
+      details: "A multimodal AI tutoring system built at HackPrinceton 2025. tbd",
       screenshots: [],
     },
     {
-      id: "DAN-04", name: "Flow AI", desc: "Privacy-first Chrome extension, on-device Gemini Nano", tech: "Chrome Built-in AI",
-      details: "A Chrome extension that brings AI assistance directly into the browser without sending data to external servers. Powered by Chrome's built-in Gemini Nano model, all inference runs on-device. Features include page summarization, writing assistance, and contextual Q&A about the current page. The extension uses Chrome's Prompt API and Summarization API, with a clean popup UI that feels native to the browser.",
+      id: "FLO-01", name: "Flow AI", desc: "Privacy-first Chrome extension, on-device Gemini Nano", tech: "Chrome Built-in AI",
+      details: "A Chrome extension. tbd",
       screenshots: [],
     },
     {
-      id: "DAN-10", name: "CopyRepo", desc: "CLI tool for formatting codebases for LLM context", tech: "Python · PyPI",
-      details: "A Python CLI tool (published on PyPI) that intelligently formats an entire codebase into a single document optimized for LLM context windows. It respects .gitignore, supports custom include/exclude patterns, and generates a file tree header followed by concatenated file contents with clear delimiters. Useful for pasting project context into ChatGPT, Claude, or similar tools. Includes token counting and automatic truncation to fit model limits.",
-      screenshots: [],
+      id: "CR-01", name: "CopyRepo", desc: "CLI tool for formatting codebases for LLM context", tech: "Python · PyPI",
+      details: "A Python CLI tool (published on PyPI) that intelligently formats an entire codebase into text optimized for LLM context windows. It respects .gitignore, supports custom include/exclude patterns, and generates a file tree header followed by concatenated file contents with clear delimiters. Useful for pasting project context into ChatGPT, Claude, or similar tools.",
+      screenshots: ["/jira/cprp1.png"],
+    },
+    {
+      id: "SIM-01", name: "Simple", desc: "Experimental chatbot with advanced search and branching", tech: "Electron",
+      details: "An experimental desktop chatbot built to iterate quickly on ideas for better chat interfaces. Key features include multi-modal search across history, attachments, and conversations (semantic, vector, keyword), conversation branching for exploring alternate paths, and a linked-list storage model for chats and messages. Built as a testbed for prototyping UX improvements that mainstream chatbots haven't shipped yet.",
+      screenshots: ["/jira/simple1.png", "/jira/simple2.png"],
     },
   ],
 };
@@ -182,7 +177,6 @@ function ProjectSidebar({ project, onClose }) {
               border: "1px dashed #d0d7de", borderRadius: 6, padding: "24px 16px",
               textAlign: "center", color: "#656d76",
             }}>
-              <div style={{ fontSize: 24, marginBottom: 6 }}>📸</div>
               <div style={{ fontSize: 12 }}>Screenshots coming soon</div>
             </div>
           )}
@@ -199,12 +193,11 @@ function ProjectSidebar({ project, onClose }) {
   );
 }
 
-function Card({ item, color, selected, onSelect, onSeeMore }) {
+function Card({ item, color, onSeeMore }) {
   const [hovered, setHovered] = useState(false);
-  const isExpanded = selected?.id === item.id;
   return (
     <div
-      onClick={() => onSelect(isExpanded ? null : item)}
+      onClick={() => onSeeMore(item)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
@@ -212,29 +205,12 @@ function Card({ item, color, selected, onSelect, onSeeMore }) {
         borderRadius: 6,
         padding: "12px 12px 10px",
         cursor: "pointer",
-        border: `1px solid ${isExpanded ? "#0969da" : hovered ? "#bbb" : "#d0d7de"}`,
+        border: `1px solid ${hovered ? "#bbb" : "#d0d7de"}`,
         transition: "border-color 0.15s",
       }}
     >
       <div style={{ fontSize: 14, fontWeight: 600, color: "#1f2328", marginBottom: 4 }}>{item.name}</div>
       <div style={{ fontSize: 12, color: "#656d76", lineHeight: 1.5, marginBottom: 8 }}>{item.desc}</div>
-      {isExpanded && (
-        <div style={{ marginBottom: 8 }}>
-          <button
-            onClick={(e) => { e.stopPropagation(); onSeeMore(item); }}
-            style={{
-              background: "#f6f8fa", color: "#1f2328", border: "1px solid #d0d7de",
-              fontSize: 12, fontWeight: 500, padding: "4px 12px",
-              borderRadius: 6, cursor: "pointer",
-              transition: "background 0.15s, border-color 0.15s",
-            }}
-            onMouseEnter={(e) => { e.target.style.background = "#eef1f4"; e.target.style.borderColor = "#bbb"; }}
-            onMouseLeave={(e) => { e.target.style.background = "#f6f8fa"; e.target.style.borderColor = "#d0d7de"; }}
-          >
-            View details →
-          </button>
-        </div>
-      )}
       <div style={{ display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center" }}>
         <span style={{
           fontSize: 12, color: "#1f2328", background: "#ddf4ff",
@@ -283,7 +259,6 @@ function ColumnHeader({ col, count }) {
 }
 
 export default function JiraBoard() {
-  const [selected, setSelected] = useState(null);
   const [sidebarProject, setSidebarProject] = useState(null);
   const isMobile = useIsMobile();
 
@@ -347,7 +322,7 @@ export default function JiraBoard() {
               <ColumnHeader col={col} count={col.items.length} />
               <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                 {col.items.map(item => (
-                  <Card key={item.id} item={item} color={col.color} selected={selected} onSelect={setSelected} onSeeMore={setSidebarProject} />
+                  <Card key={item.id} item={item} color={col.color} onSeeMore={setSidebarProject} />
                 ))}
               </div>
             </div>
@@ -368,7 +343,7 @@ export default function JiraBoard() {
               <ColumnHeader col={col} count={col.items.length} />
               <div style={{ flex: 1, overflow: "auto", display: "flex", flexDirection: "column", gap: 8 }}>
                 {col.items.map(item => (
-                  <Card key={item.id} item={item} color={col.color} selected={selected} onSelect={setSelected} onSeeMore={setSidebarProject} />
+                  <Card key={item.id} item={item} color={col.color} onSeeMore={setSidebarProject} />
                 ))}
               </div>
             </div>
