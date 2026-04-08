@@ -106,21 +106,14 @@ function MusPage({ onBack }) {
         <span className="subpage-cover">🎵</span>
         <h1 className="subpage-title">singer-songwriter &amp; producer</h1>
         <p className="subpage-desc">
-          based in suzhou / singapore / san diego — i've been making music for the past 8 years. when i started college during the pandemic i thought, let's actually produce these songs and release them. so that's what i did. curated songs on{" "}
+          i've been making music for the past 8 years. when i started college during the pandemic i thought, let's actually produce these songs and release them. so that's what i did. curated songs on{" "}
           <a href="https://open.spotify.com/artist/0f6uqts7zv87P3xQbF2HMu" target="_blank" rel="noopener">spotify</a>, full collection on{" "}
           <a href="https://anjie.bandcamp.com/" target="_blank" rel="noopener">bandcamp</a>.
+          you might also notice a lot of these songs are greyed out because i took them down. they'll be back up soon though!
         </p>
         <p className="section-heading">Discography</p>
         <div className="mus-grid">
-          <MusCard title="坐车去海边" subtitle="a song about traveling the world" tag="suzhou" index={0}>
-            <iframe style={{ borderRadius: 12 }} src="https://open.spotify.com/embed/track/31UWx5Z5b6inZCL0EJ6ucy?utm_source=generator&theme=0" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" />
-          </MusCard>
-          <MusCard title="一世纪相爱" subtitle="first single off my upcoming album" tag="for the centuries" index={1}>
-            <iframe style={{ borderRadius: 12 }} src="https://open.spotify.com/embed/track/2KdBl3cDs1zK0agPLXM9xu?utm_source=generator&theme=0" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" />
-          </MusCard>
-          <MusCard title="有一个地方" subtitle="my first ever album" tag="there was a place" index={2}>
-            <iframe style={{ border: 0, width: "100%", height: 439, borderRadius: 12 }} src="https://bandcamp.com/EmbeddedPlayer/album=3545554598/size=large/bgcol=ffffff/linkcol=0687f5/artwork=none/transparent=true/" seamless />
-          </MusCard>
+          <iframe data-testid="embed-iframe" style={{ borderRadius: "2px" }} src="https://open.spotify.com/embed/playlist/3G54Dk16J8BUZ2sm8wS9hX?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowFullScreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
       </div>
     </div>
