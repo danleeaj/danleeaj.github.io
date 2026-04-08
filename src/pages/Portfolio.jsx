@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function SocialLink({ href, children }) {
   const [hovered, setHovered] = useState(false);
@@ -35,6 +35,21 @@ function SocialLink({ href, children }) {
   );
 }
 
+function Tinkering() {
+  const frames = [1, 2, 3, 3, 3, 3];
+  const [frame, setFrame] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setFrame(f => (f + 1) % frames.length), 400);
+    return () => clearInterval(id);
+  }, []);
+  const dots = frames[frame];
+  return (
+    <div style={{ fontSize: 12, color: "#999", marginTop: 0, fontFamily: "'JetBrains Mono', monospace", letterSpacing: 0.1 }}>
+      Tinkering{".".repeat(dots)}
+    </div>
+  );
+}
+
 import CV from "../components/CV";
 import JiraBoard from "../components/JiraBoard";
 import Shell from "../components/Shell";
@@ -62,14 +77,14 @@ export default function Portfolio() {
           100% { gap: 22px; }
         }
       `}</style>
-      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
       <div style={{ padding: "12px 22px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #e8e6e1", flexShrink: 0, overflow: "visible" }}>
         <div style={{ display: "flex", alignItems: "center", gap: pinExploded ? 20 : 12, overflow: "visible", animation: pinExploded ? "gap-bounce 0.5s ease forwards" : "none" }}>
           <AvatarPin onExplode={() => setPinExploded(true)} />
           <div>
             <div style={{ fontSize: 20, fontWeight: 600, color: "#1a1a1a", letterSpacing: -0.5 }}>An Jie (Daniel) Lee</div>
-            <div style={{ fontSize: 12, color: "#999", marginTop: 2 }}>李安杰 · builder of things</div>
-            <div style={{ fontSize: 12, marginTop: 4, display: "flex", gap: 4, alignItems: "center" }}>
+            <Tinkering />
+            <div style={{ fontSize: 12, marginTop: 6, display: "flex", gap: 4, alignItems: "center" }}>
               <SocialLink href="https://github.com/danleeaj">GitHub</SocialLink>
               <span style={{ color: "#ccc" }}>·</span>
               <SocialLink href="https://linkedin.com/in/anjie-lee">LinkedIn</SocialLink>
