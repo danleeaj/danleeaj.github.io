@@ -140,7 +140,7 @@ function BlinkText({ children, style }) {
   return <span style={{ ...style, visibility: visible ? "visible" : "hidden" }}>{children}</span>;
 }
 
-function RainbowText({ children, size = 24 }) {
+function RainbowText({ children, size = 24, className }) {
   const text = typeof children === "string" ? children : "";
   const [offset, setOffset] = useState(0);
   useEffect(() => {
@@ -148,7 +148,7 @@ function RainbowText({ children, size = 24 }) {
     return () => clearInterval(id);
   }, []);
   return (
-    <span style={{ fontSize: size, fontFamily: "'Comic Sans MS', cursive", fontWeight: "bold" }}>
+    <span className={className} style={{ fontSize: size, fontFamily: "'Comic Sans MS', cursive", fontWeight: "bold" }}>
       {text.split("").map((ch, i) => (
         <span key={i} style={{ color: `hsl(${((i + offset) * 30) % 360}, 100%, 50%)` }}>{ch}</span>
       ))}
@@ -236,8 +236,8 @@ export default function GeocitiesHomepage() {
     if (page === "about") return (
       <div>
         {sectionHeader("About mee")}
-        <div style={{ display: "flex", gap: 12, marginTop: 8 }}>
-          <div style={{ border: "3px ridge #ccc", padding: 6, background: "#f0f0f0", flex: "0 0 auto" }}>
+        <div className="geocities-about-flex">
+          <div className="geocities-about-photo" style={{ border: "3px ridge #ccc", padding: 6, background: "#f0f0f0" }}>
             <div style={{ width: 90, height: 90, background: "#e0e0e0", border: "2px inset #ccc", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, color: "#666" }}>[photo]</div>
             <div style={{ textAlign: "center", fontSize: 9, color: "#666", marginTop: 4 }}>thats me!!</div>
           </div>
@@ -293,7 +293,7 @@ export default function GeocitiesHomepage() {
           </div>
           <div style={{ marginBottom: 4 }}>
             <span style={{ color: "#000", fontSize: 11 }}>Message: </span>
-            <input value={gbMsg} onChange={e => setGbMsg(e.target.value)} style={{ border: "2px inset #ccc", background: "#fff", padding: 2, fontSize: 11, width: 250 }} />
+            <input className="geocities-gb-msg-input" value={gbMsg} onChange={e => setGbMsg(e.target.value)} style={{ border: "2px inset #ccc", background: "#fff", padding: 2, fontSize: 11 }} />
           </div>
           <button onClick={() => {
             if (gbName && gbMsg) {
@@ -358,11 +358,33 @@ export default function GeocitiesHomepage() {
   };
 
   return (
-    <div style={{ height: "100%", overflow: "auto", background: "#fff", fontFamily: "'Times New Roman', serif", position: "relative", zoom: 1.25 }}>
+    <div className="geocities-root" style={{ height: "100%", overflow: "auto", background: "#fff", fontFamily: "'Times New Roman', serif", position: "relative" }}>
       <style>{`
         @keyframes twinkle { from { opacity: 0.3; } to { opacity: 1; } }
         @keyframes rainbow { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
         * { scrollbar-width: thin; scrollbar-color: #ccc #fff; }
+        .geocities-root { zoom: 1.25; }
+        .geocities-main-layout { display: flex; gap: 12px; }
+        .geocities-sidebar { width: 160px; flex-shrink: 0; font-size: 12px; }
+        .geocities-content { flex: 1; border: 2px ridge #ccc; padding: 12px; background: #fff; min-height: 400px; }
+        .geocities-about-flex { display: flex; gap: 12px; margin-top: 8px; }
+        .geocities-about-photo { flex: 0 0 auto; }
+        .geocities-gb-msg-input { width: 250px; }
+        .geocities-title-text { font-size: 28px; }
+        .geocities-body { padding: 16px; }
+        @media (max-width: 600px) {
+          .geocities-root { zoom: 1; }
+          .geocities-main-layout { flex-direction: column; gap: 8px; }
+          .geocities-sidebar { width: 100%; }
+          .geocities-sidebar > div { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; align-items: center; }
+          .geocities-sidebar > div > div:first-child { width: 100%; }
+          .geocities-content { min-height: unset; padding: 10px; }
+          .geocities-about-flex { flex-direction: column; }
+          .geocities-about-photo { align-self: center; }
+          .geocities-gb-msg-input { width: 100%; box-sizing: border-box; }
+          .geocities-title-text { font-size: 20px; }
+          .geocities-body { padding: 8px; }
+        }
       `}</style>
       <CursorTrail />
       <StarfieldBg />
@@ -370,11 +392,11 @@ export default function GeocitiesHomepage() {
       <div style={{ position: "relative", zIndex: 1, maxWidth: 880, margin: "0 auto" }}>
         <MarqueeText />
 
-        <div style={{ background: "#fff", padding: 16, minHeight: 600 }}>
+        <div className="geocities-body" style={{ background: "#fff", minHeight: 600 }}>
           {/* Title area */}
           <div style={{ textAlign: "center", marginBottom: 12 }}>
             <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 8, marginBottom: 4 }}>
-              <RainbowText size={28}>~*~ Daniel's Homepage ~*~</RainbowText>
+              <RainbowText size={28} className="geocities-title-text">~*~ Daniel's Homepage ~*~</RainbowText>
             </div>
             <div style={{ fontSize: 12, color: "#333", fontStyle: "italic", fontFamily: "'Comic Sans MS', cursive" }}>
               How did you even find this page!?!?
@@ -383,9 +405,9 @@ export default function GeocitiesHomepage() {
           </div>
 
           {/* Main layout table */}
-          <div style={{ display: "flex", gap: 12 }}>
+          <div className="geocities-main-layout">
             {/* Sidebar */}
-            <div style={{ width: 160, flexShrink: 0, fontSize: 12 }}>
+            <div className="geocities-sidebar">
               <div style={{ border: "2px ridge #ccc", padding: 8, background: "#f8f8f8", marginBottom: 8 }}>
                 <div style={{ fontWeight: "bold", color: "#000", marginBottom: 6, fontSize: 13, textAlign: "center", fontFamily: "'Comic Sans MS', cursive" }}>Navigation</div>
                 {navLink("", "Home", "home")}
@@ -399,7 +421,7 @@ export default function GeocitiesHomepage() {
             </div>
 
             {/* Main content */}
-            <div style={{ flex: 1, border: "2px ridge #ccc", padding: 12, background: "#fff", minHeight: 400 }}>
+            <div className="geocities-content">
               {renderPage()}
             </div>
           </div>
