@@ -77,7 +77,7 @@ export default function Portfolio() {
           100% { gap: 22px; }
         }
       `}</style>
-      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Jacquard+24&display=swap" rel="stylesheet" />
       <div style={{ padding: "12px 22px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #e8e6e1", flexShrink: 0, overflow: "visible" }}>
         <div style={{ display: "flex", alignItems: "center", gap: pinExploded ? 20 : 12, overflow: "visible", animation: pinExploded ? "gap-bounce 0.5s ease forwards" : "none" }}>
           <AvatarPin onExplode={() => setPinExploded(true)} />
