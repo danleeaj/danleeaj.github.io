@@ -1,4 +1,40 @@
 import { useState } from "react";
+
+function SocialLink({ href, children }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        color: hovered ? "#2563eb" : "#4a90d9",
+        textDecoration: "none",
+        display: "inline-block",
+        position: "relative",
+        transition: "transform 0.3s ease, color 0.3s ease",
+        transform: hovered ? "scale(1.03)" : "translateY(0) scale(1)",
+      }}
+    >
+      {children}
+      <span
+        style={{
+          position: "absolute",
+          left: 0,
+          bottom: -1,
+          height: 1.5,
+          background: "#2563eb",
+          borderRadius: 1,
+          transition: "width 0.3s ease",
+          width: hovered ? "100%" : "0%",
+        }}
+      />
+    </a>
+  );
+}
+
 import CV from "../components/CV";
 import JiraBoard from "../components/JiraBoard";
 import Shell from "../components/Shell";
@@ -25,6 +61,11 @@ export default function Portfolio() {
           <div>
             <div style={{ fontSize: 20, fontWeight: 600, color: "#1a1a1a", letterSpacing: -0.5 }}>Daniel Lee</div>
             <div style={{ fontSize: 12, color: "#999", marginTop: 2 }}>李安杰 · builder of things</div>
+            <div style={{ fontSize: 12, marginTop: 4, display: "flex", gap: 4, alignItems: "center" }}>
+              <SocialLink href="https://github.com/danleeaj">GitHub</SocialLink>
+              <span style={{ color: "#ccc" }}>·</span>
+              <SocialLink href="https://linkedin.com/in/anjie-lee">LinkedIn</SocialLink>
+            </div>
           </div>
         </div>
         <select
