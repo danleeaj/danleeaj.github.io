@@ -244,7 +244,7 @@ function HomePage({ onNavigate }) {
     { key: PAGES.BIO, icon: "🧬", label: "neuroscience researcher" },
   ];
   return (
-    <div className="page landing">
+    <div className="landing">
       <div className="landing-content">
         <h1 className="landing-title">hellooo, i'm anjie</h1>
         <p className="landing-subtitle">
@@ -310,13 +310,13 @@ const CSS_TEXT = `
   --font-serif:Lyon-Text,Georgia,ui-serif,serif;
   --page-width:720px;
 }
-.app-root { font-family:var(--font-sans); color:var(--text); background:var(--bg); line-height:1.5; -webkit-font-smoothing:antialiased; min-height:100vh; }
+.app-root { font-family:var(--font-sans); color:var(--text); background:var(--bg); line-height:1.5; -webkit-font-smoothing:antialiased; height:100%; }
 a { color:var(--text); text-decoration:underline; text-decoration-color:var(--border); text-underline-offset:2px; transition:text-decoration-color .15s ease; }
 a:hover { text-decoration-color:var(--text); }
 ::selection { background:rgba(35,131,226,.15); }
 .page { max-width:var(--page-width); margin:0 auto; padding:0 1.5rem; }
-.landing { min-height:100vh; display:flex; align-items:center; }
-.landing-content { padding:4rem 0; width:100%; }
+.landing { height:100%; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.landing-content { padding:4rem 0; width:100%; max-width:var(--page-width); padding-left:1.5rem; padding-right:1.5rem; }
 .landing-title { font-size:2.5rem; font-weight:700; letter-spacing:-0.03em; line-height:1.2; margin-bottom:.25rem; }
 .landing-subtitle { font-size:1rem; color:var(--text-secondary); margin-bottom:2.5rem; }
 .daniel-hover { display:inline-block; cursor:default; transition:transform .2s ease; }
