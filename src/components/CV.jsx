@@ -7,7 +7,7 @@ function Entry({ title, meta, desc, bullets }) {
 
 export default function CV() {
   return (
-    <div style={{ height: "100%", overflow: "auto", background: "#ffffff", fontFamily: "'Charter', Georgia, serif", padding: "32px 40px", color: "#1a1a1a" }}>
+    <div style={{ background: "#ffffff", fontFamily: "'Charter', Georgia, serif", padding: "32px 40px", color: "#1a1a1a" }}>
       <div style={{ maxWidth: 680, margin: "0 auto" }}>
         <div style={{ fontSize: 26, fontWeight: 700, letterSpacing: -0.5 }}>An Jie (Daniel) Lee</div>
         <div style={{ fontSize: 12, color: "#555", marginTop: 4, lineHeight: 1.6 }}>
