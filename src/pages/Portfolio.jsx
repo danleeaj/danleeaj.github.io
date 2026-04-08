@@ -54,19 +54,24 @@ import CV from "../components/CV";
 import JiraBoard from "../components/JiraBoard";
 import Shell from "../components/Shell";
 import Explorer from "../components/Explorer";
-import Fairytale from "../components/Fairytale";
+// import Fairytale from "../components/Fairytale";
+import Homepage from "../components/Homepage";
+import Recursion from "../components/Recursion";
 import AvatarPin from "../components/AvatarPin";
 
 const MODES = [
+  { id: "home", label: "Home" },
   { id: "jira", label: "Board" },
   { id: "shell", label: "Shell" },
-  { id: "fairytale", label: "Tale" },
+  // { id: "fairytale", label: "Tale" },
   { id: "explorer", label: "Explorer" },
   { id: "cv", label: "CV" },
+  { id: "recursion", label: "Recurse!?" },
 ];
 
 export default function Portfolio() {
-  const [mode, setMode] = useState("jira");
+  const initialMode = window.location.hash === "#recursion" ? "recursion" : "home";
+  const [mode, setMode] = useState(initialMode);
   const [pinExploded, setPinExploded] = useState(false);
   return (
     <div style={{ height: "100vh", minWidth: 0, display: "flex", flexDirection: "column", background: "#fafaf8", fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif" }}>
@@ -110,12 +115,14 @@ export default function Portfolio() {
           ))}
         </select>
       </div>
-      <div style={{ flex: 1, margin: "16px 24px 24px", borderRadius: 12, border: "1px solid #e0ddd7", overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.04), 0 0 0 1px rgba(0,0,0,0.02)", background: "white" }}>
+      <div style={{ flex: 1, margin: "16px 24px 24px", borderRadius: 2, border: "1px solid #e0ddd7", overflow: "auto", boxShadow: "0 2px 12px rgba(0,0,0,0.04), 0 0 0 1px rgba(0,0,0,0.02)", background: "white" }}>
+        {mode === "home" && <Homepage />}
         {mode === "jira" && <JiraBoard />}
         {mode === "shell" && <Shell />}
-        {mode === "fairytale" && <Fairytale />}
+        {/* {mode === "fairytale" && <Fairytale />} */}
         {mode === "explorer" && <Explorer />}
         {mode === "cv" && <CV />}
+        {mode === "recursion" && <Recursion />}
       </div>
     </div>
   );
