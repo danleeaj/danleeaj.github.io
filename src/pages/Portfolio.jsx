@@ -16,7 +16,7 @@ const MODES = [
 export default function Portfolio() {
   const [mode, setMode] = useState("jira");
   return (
-    <div style={{ height: "100vh", minWidth: 550, display: "flex", flexDirection: "column", background: "#fafaf8", fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif" }}>
+    <div style={{ height: "100vh", minWidth: 0, display: "flex", flexDirection: "column", background: "#fafaf8", fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif" }}>
       <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
       <div style={{ padding: "16px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #e8e6e1", flexShrink: 0 }}>
         <div>
