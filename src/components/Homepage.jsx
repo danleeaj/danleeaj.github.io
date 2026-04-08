@@ -44,98 +44,40 @@ function DevPage({ onBack }) {
           I'm currently pursuing a master's program at the University of Pennsylvania (MCIT). My journey started building little side projects as an undergrad and now I hope it becomes a full-time, rest-of-my-life, put-a-ring-on-it kind of thing.
         </p>
         <p className="section-heading">Projects</p>
-        <table className="db-table">
-          <thead><tr><th>Project</th><th>Stack</th><th>Description</th><th>Link</th></tr></thead>
-          <tbody>
-            <tr>
-              <td><strong>Musicboxd</strong></td>
-              <td><span className="tag tag-green">Next.js</span> <span className="tag tag-purple">Supabase</span> <span className="tag tag-blue">PostgreSQL</span></td>
-              <td>Letterboxd, but for music — log, rate, and review albums
-                <ul className="bullet-list" style={{ marginTop: "0.4rem" }}>
-                  <li>MusicBrainz import pipeline with cover art handling</li>
-                  <li>Clerk + Supabase JWT auth integration</li>
-                  <li>Star rating system, album/track/review UI</li>
-                  <li>Row-level security policies for user data</li>
-                </ul>
-              </td>
-              <td><a href="https://github.com/danleeaj/musicboxd" target="_blank" rel="noopener">Github</a></td>
-            </tr>
-            <tr>
-              <td><strong>Subs</strong></td>
-              <td><span className="tag tag-green">React</span> <span className="tag tag-blue">Tauri</span> <span className="tag tag-purple">FastAPI</span></td>
-              <td>Desktop app for video transcription and subtitle translation
-                <ul className="bullet-list" style={{ marginTop: "0.4rem" }}>
-                  <li>Parallel Whisper API processing — ~5× speedup</li>
-                  <li>Silence-based audio chunking for accuracy</li>
-                  <li>GPT translation with sliding context windows</li>
-                  <li>SRT subtitle burning via ffmpeg</li>
-                </ul>
-              </td>
-              <td><a href="https://github.com/danleeaj/subs" target="_blank" rel="noopener">Github</a></td>
-            </tr>
-            <tr>
-              <td><strong>Summate AI</strong></td>
-              <td><span className="tag tag-blue">Python</span> <span className="tag tag-purple">AWS</span></td>
-              <td>Multi-agent debate framework for grading — boosted accuracy from 64% to 90%
-                <ul className="bullet-list" style={{ marginTop: "0.4rem" }}>
-                  <li>REST API via API Gateway for querying and feedback</li>
-                  <li>Serverless functions with AWS Lambda</li>
-                  <li>Concurrent processing — 25% faster processing time</li>
-                  <li>Streamlit UI for visual demos</li>
-                </ul>
-              </td>
-              <td><a href="https://summate-ai.streamlit.app/" target="_blank" rel="noopener">Demo</a></td>
-            </tr>
-            <tr>
-              <td><strong>Feynman</strong></td>
-              <td><span className="tag tag-blue">Python</span> <span className="tag tag-green">FastAPI</span> <span className="tag tag-purple">WebSocket</span></td>
-              <td>Multimodal AI tutoring platform — built at HackPrinceton 2025
-                <ul className="bullet-list" style={{ marginTop: "0.4rem" }}>
-                  <li>Real-time interaction via WebSocket + FastAPI</li>
-                  <li>Grok Vision for visual understanding</li>
-                  <li>ElevenLabs voice synthesis for spoken explanations</li>
-                </ul>
-              </td>
-              <td><a href="https://github.com/danleeaj/feynman" target="_blank" rel="noopener">Github</a></td>
-            </tr>
-            <tr>
-              <td><strong>Flow AI</strong></td>
-              <td><span className="tag tag-green">JavaScript</span> <span className="tag tag-purple">Chrome API</span></td>
-              <td>Privacy-first Chrome extension using on-device Gemini Nano
-                <ul className="bullet-list" style={{ marginTop: "0.4rem" }}>
-                  <li>Built for Chrome Built-In AI Hackathon</li>
-                  <li>All inference runs locally — no data leaves your browser</li>
-                </ul>
-              </td>
-              <td><a href="https://github.com/danleeaj/flow-ai" target="_blank" rel="noopener">Github</a></td>
-            </tr>
-            <tr>
-              <td><strong>CopyRepo</strong></td>
-              <td><span className="tag tag-blue">Python</span> <span className="tag tag-purple">PyPI</span></td>
-              <td>CLI tool to copy repo contents to clipboard — published on PyPI</td>
-              <td><a href="https://pypi.org/project/copyrepo/" target="_blank" rel="noopener">PyPI</a></td>
-            </tr>
-            <tr>
-              <td><strong>d_wordle.py</strong></td>
-              <td><span className="tag tag-blue">Python</span></td>
-              <td>Terminal-based Wordle clone
-                <ul className="bullet-list" style={{ marginTop: "0.4rem" }}>
-                  <li>Save/resume progress</li>
-                  <li>Three difficulty levels via CLI args</li>
-                  <li>Dictionary validation</li>
-                  <li>Scoreboard on exit</li>
-                </ul>
-              </td>
-              <td><a href="https://github.com/danleeaj/d_wordle.py" target="_blank" rel="noopener">Github</a></td>
-            </tr>
-            <tr>
-              <td><strong>this site</strong></td>
-              <td><span className="tag tag-green">HTML/CSS</span></td>
-              <td>The page you're looking at right now.</td>
-              <td><a href="https://github.com/danleeaj/danleeaj.github.io" target="_blank" rel="noopener">Github</a></td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="project-list">
+          <a href="https://github.com/danleeaj/musicboxd" target="_blank" rel="noopener" className="project-item">
+            <span className="project-name">Musicboxd</span>
+            <span className="project-desc">Letterboxd, but for music — log, rate, and review albums</span>
+          </a>
+          <a href="https://github.com/danleeaj/subs" target="_blank" rel="noopener" className="project-item">
+            <span className="project-name">Subs</span>
+            <span className="project-desc">Desktop app for video transcription and subtitle translation</span>
+          </a>
+          <a href="https://summate-ai.streamlit.app/" target="_blank" rel="noopener" className="project-item">
+            <span className="project-name">Summate AI</span>
+            <span className="project-desc">Multi-agent debate framework for grading — 64% to 90% accuracy</span>
+          </a>
+          <a href="https://github.com/danleeaj/feynman" target="_blank" rel="noopener" className="project-item">
+            <span className="project-name">Feynman</span>
+            <span className="project-desc">Multimodal AI tutoring platform — built at HackPrinceton 2025</span>
+          </a>
+          <a href="https://github.com/danleeaj/flow-ai" target="_blank" rel="noopener" className="project-item">
+            <span className="project-name">Flow AI</span>
+            <span className="project-desc">Privacy-first Chrome extension using on-device Gemini Nano</span>
+          </a>
+          <a href="https://pypi.org/project/copyrepo/" target="_blank" rel="noopener" className="project-item">
+            <span className="project-name">CopyRepo</span>
+            <span className="project-desc">CLI tool to copy repo contents to clipboard — published on PyPI</span>
+          </a>
+          <a href="https://github.com/danleeaj/d_wordle.py" target="_blank" rel="noopener" className="project-item">
+            <span className="project-name">d_wordle.py</span>
+            <span className="project-desc">Terminal-based Wordle clone with save/resume and difficulty levels</span>
+          </a>
+          <a href="https://github.com/danleeaj/danleeaj.github.io" target="_blank" rel="noopener" className="project-item">
+            <span className="project-name">this site</span>
+            <span className="project-desc">The page you're looking at right now</span>
+          </a>
+        </div>
       </div>
     </div>
   );
@@ -383,6 +325,13 @@ a:hover { text-decoration-color:var(--text); }
 .toggle-title .tag { margin-left:.5rem; font-weight:400; vertical-align:middle; }
 .toggle-body { padding:0 0 .75rem 1.75rem; }
 .toggle-body iframe { border-radius:8px; margin-top:.25rem; }
+
+/* Project flat list */
+.project-list { display:flex; flex-direction:column; margin-bottom:2.5rem; }
+.project-item { display:flex; align-items:baseline; gap:.5rem; padding:.5rem .75rem; text-decoration:none; color:var(--text); border-radius:4px; transition:background .1s ease; }
+.project-item:hover { background:var(--bg-hover); text-decoration:none; }
+.project-name { font-weight:600; font-size:.95rem; white-space:nowrap; flex-shrink:0; }
+.project-desc { font-size:.85rem; color:var(--text-secondary); }
 
 @media(max-width:640px) {
   .landing-title { font-size:2rem; }
