@@ -4,6 +4,7 @@ import JiraBoard from "../components/JiraBoard";
 import Shell from "../components/Shell";
 import Explorer from "../components/Explorer";
 import Fairytale from "../components/Fairytale";
+import AvatarPin from "../components/AvatarPin";
 
 const MODES = [
   { id: "jira", label: "Board" },
@@ -18,10 +19,13 @@ export default function Portfolio() {
   return (
     <div style={{ height: "100vh", minWidth: 0, display: "flex", flexDirection: "column", background: "#fafaf8", fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif" }}>
       <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-      <div style={{ padding: "16px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #e8e6e1", flexShrink: 0 }}>
-        <div>
-          <div style={{ fontSize: 20, fontWeight: 600, color: "#1a1a1a", letterSpacing: -0.5 }}>Daniel Lee</div>
-          <div style={{ fontSize: 12, color: "#999", marginTop: 2 }}>李安杰 · builder of things</div>
+      <div style={{ padding: "16px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #e8e6e1", flexShrink: 0, overflow: "visible" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 12, overflow: "visible" }}>
+          <AvatarPin />
+          <div>
+            <div style={{ fontSize: 20, fontWeight: 600, color: "#1a1a1a", letterSpacing: -0.5 }}>Daniel Lee</div>
+            <div style={{ fontSize: 12, color: "#999", marginTop: 2 }}>李安杰 · builder of things</div>
+          </div>
         </div>
         <select
           value={mode}
