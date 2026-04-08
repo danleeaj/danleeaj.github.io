@@ -62,12 +62,15 @@ const hiddenObjectBase = {
   filter: "drop-shadow(0 2px 6px rgba(0, 0, 0, 0.18))",
 };
 
-export default function AvatarPin() {
+export default function AvatarPin({ onExplode }) {
   const [exploded, setExploded] = useState(false);
 
   const handleClick = useCallback(() => {
-    if (!exploded) setExploded(true);
-  }, [exploded]);
+    if (!exploded) {
+      setExploded(true);
+      onExplode?.();
+    }
+  }, [exploded, onExplode]);
 
   return (
     <>

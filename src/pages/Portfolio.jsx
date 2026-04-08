@@ -52,14 +52,22 @@ const MODES = [
 
 export default function Portfolio() {
   const [mode, setMode] = useState("jira");
+  const [pinExploded, setPinExploded] = useState(false);
   return (
     <div style={{ height: "100vh", minWidth: 0, display: "flex", flexDirection: "column", background: "#fafaf8", fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif" }}>
+      <style>{`
+        @keyframes gap-bounce {
+          0%   { gap: 12px; }
+          80%  { gap: 24px; }
+          100% { gap: 22px; }
+        }
+      `}</style>
       <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-      <div style={{ padding: "16px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #e8e6e1", flexShrink: 0, overflow: "visible" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12, overflow: "visible" }}>
-          <AvatarPin />
+      <div style={{ padding: "12px 22px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #e8e6e1", flexShrink: 0, overflow: "visible" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: pinExploded ? 20 : 12, overflow: "visible", animation: pinExploded ? "gap-bounce 0.5s ease forwards" : "none" }}>
+          <AvatarPin onExplode={() => setPinExploded(true)} />
           <div>
-            <div style={{ fontSize: 20, fontWeight: 600, color: "#1a1a1a", letterSpacing: -0.5 }}>Daniel Lee</div>
+            <div style={{ fontSize: 20, fontWeight: 600, color: "#1a1a1a", letterSpacing: -0.5 }}>An Jie (Daniel) Lee</div>
             <div style={{ fontSize: 12, color: "#999", marginTop: 2 }}>李安杰 · builder of things</div>
             <div style={{ fontSize: 12, marginTop: 4, display: "flex", gap: 4, alignItems: "center" }}>
               <SocialLink href="https://github.com/danleeaj">GitHub</SocialLink>
