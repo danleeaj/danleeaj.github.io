@@ -83,6 +83,21 @@ function DevPage({ onBack }) {
   );
 }
 
+function MusCard({ title, subtitle, tag, children, index }) {
+  return (
+    <div className="mus-card" style={{ animationDelay: `${index * 0.08}s` }}>
+      <div className="mus-card-header">
+        <div className="mus-card-info">
+          <span className="mus-card-title">{title}</span>
+          <span className="mus-card-subtitle">{subtitle}</span>
+        </div>
+        <span className="tag">{tag}</span>
+      </div>
+      <div className="mus-card-embed">{children}</div>
+    </div>
+  );
+}
+
 function MusPage({ onBack }) {
   return (
     <div className="subpage-shell slide-in-anim">
@@ -96,16 +111,16 @@ function MusPage({ onBack }) {
           <a href="https://anjie.bandcamp.com/" target="_blank" rel="noopener">bandcamp</a>.
         </p>
         <p className="section-heading">Discography</p>
-        <div className="toggle-list">
-          <Toggle title="坐车去海边" tag="suzhou" subtitle="a song about traveling the world">
-            <iframe style={{ borderRadius: 12 }} src="https://open.spotify.com/embed/track/31UWx5Z5b6inZCL0EJ6ucy?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" />
-          </Toggle>
-          <Toggle title="一世纪相爱" tag="for the centuries" subtitle="first single off my upcoming album">
-            <iframe style={{ borderRadius: 12 }} src="https://open.spotify.com/embed/track/2KdBl3cDs1zK0agPLXM9xu?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" />
-          </Toggle>
-          <Toggle title="有一个地方" tag="there was a place" subtitle="my first ever album">
-            <iframe style={{ border: 0, width: "100%", height: 439 }} src="https://bandcamp.com/EmbeddedPlayer/album=3545554598/size=large/bgcol=ffffff/linkcol=0687f5/artwork=none/transparent=true/" seamless />
-          </Toggle>
+        <div className="mus-grid">
+          <MusCard title="坐车去海边" subtitle="a song about traveling the world" tag="suzhou" index={0}>
+            <iframe style={{ borderRadius: 12 }} src="https://open.spotify.com/embed/track/31UWx5Z5b6inZCL0EJ6ucy?utm_source=generator&theme=0" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" />
+          </MusCard>
+          <MusCard title="一世纪相爱" subtitle="first single off my upcoming album" tag="for the centuries" index={1}>
+            <iframe style={{ borderRadius: 12 }} src="https://open.spotify.com/embed/track/2KdBl3cDs1zK0agPLXM9xu?utm_source=generator&theme=0" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" />
+          </MusCard>
+          <MusCard title="有一个地方" subtitle="my first ever album" tag="there was a place" index={2}>
+            <iframe style={{ border: 0, width: "100%", height: 439, borderRadius: 12 }} src="https://bandcamp.com/EmbeddedPlayer/album=3545554598/size=large/bgcol=ffffff/linkcol=0687f5/artwork=none/transparent=true/" seamless />
+          </MusCard>
         </div>
       </div>
     </div>
@@ -125,54 +140,7 @@ function BioPage({ onBack }) {
           <br /><br />
           During this period, I explored the potential of machine learning and computer vision in counting and identifying cells in immunohistochemical images in the context of Alzheimer's disease in mice.
         </p>
-        <p className="section-heading">Work Experience</p>
-        <table className="db-table">
-          <thead><tr><th>Date</th><th>Role</th><th>Details</th></tr></thead>
-          <tbody>
-            <tr>
-              <td style={{ whiteSpace: "nowrap" }}>Sep 2023 - May 2025</td>
-              <td><strong>Salk Institute</strong><br /><span className="tag tag-purple">Allen Lab</span></td>
-              <td>
-                <ul className="bullet-list">
-                  <li>Developed macros and scripts to fully automate image data processing in Python and ImageJ Macro Language</li>
-                  <li>Optimized CellProfiler pipelines for enhanced image analysis and data extraction</li>
-                  <li>Performed sample preparation — immunostaining, brain slicing, slide mounting with cryostats</li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td style={{ whiteSpace: "nowrap" }}>Mar 2023 - Jun 2023</td>
-              <td><strong>UC San Diego</strong><br /><span className="tag tag-blue">Jung Lab</span></td>
-              <td>
-                <ul className="bullet-list">
-                  <li>Piloted experimental methods for a novel study on music-based Alzheimer's prevention</li>
-                  <li>Developed fully automated behavioral experiments using PsychoPy</li>
-                  <li>Analyzed and visualized EEG data using EEGLAB on MATLAB</li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td style={{ whiteSpace: "nowrap" }}>Jun 2023 - Aug 2023</td>
-              <td><strong>National University of Singapore</strong><br /><span className="tag tag-green">Feng Lab</span></td>
-              <td>
-                <ul className="bullet-list">
-                  <li>Processed and analyzed large population datasets using SPSS</li>
-                  <li>Aided in writing multiple journal manuscripts on healthy ageing</li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td style={{ whiteSpace: "nowrap" }}>Apr 2022 – Mar 2023</td>
-              <td><strong>UC San Diego</strong><br /><span className="tag tag-orange">Teaching</span></td>
-              <td>
-                <ul className="bullet-list">
-                  <li>Held office hours and discussion sections for biology courses</li>
-                  <li>Graded exams and homework, held extra sessions for struggling students</li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+
       </div>
     </div>
   );
@@ -325,6 +293,17 @@ a:hover { text-decoration-color:var(--text); }
 .toggle-title .tag { margin-left:.5rem; font-weight:400; vertical-align:middle; }
 .toggle-body { padding:0 0 .75rem 1.75rem; }
 .toggle-body iframe { border-radius:8px; margin-top:.25rem; }
+
+/* Music cards */
+.mus-grid { display:flex; flex-direction:column; gap:1.25rem; margin-bottom:2.5rem; }
+.mus-card { background:var(--bg); border:1px solid var(--border-light); border-radius:10px; overflow:hidden; transition:box-shadow .2s ease, border-color .2s ease; animation:musCardIn .4s ease-out both; }
+.mus-card:hover { border-color:var(--border); box-shadow:0 2px 12px rgba(0,0,0,.06); }
+@keyframes musCardIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+.mus-card-header { display:flex; align-items:flex-start; justify-content:space-between; gap:.75rem; padding:1rem 1.25rem .5rem; }
+.mus-card-info { display:flex; flex-direction:column; gap:.1rem; }
+.mus-card-title { font-size:1.05rem; font-weight:600; color:var(--text); }
+.mus-card-subtitle { font-size:.85rem; color:var(--text-secondary); }
+.mus-card-embed { padding:0 1.25rem 1.25rem; }
 
 /* Project flat list */
 .project-list { display:flex; flex-direction:column; margin-bottom:2.5rem; }
