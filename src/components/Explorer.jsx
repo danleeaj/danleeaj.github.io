@@ -15,7 +15,8 @@ export default function Explorer() {
   };
 
   return (
-    <div style={{ height: "100%", overflow: "auto", background: "#c0c0c0", fontFamily: "'Times New Roman', serif" }}>
+    <div style={{ height: "100%", overflow: "auto", background: "#c0c0c0", fontFamily: "'Times New Roman', serif", display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <div style={{ width: "100%", maxWidth: 900 }}>
       <div style={{ background: "#000080", color: "white", padding: "2px 8px", fontSize: 12, fontFamily: "'MS Sans Serif', Tahoma, sans-serif", display: "flex", alignItems: "center", gap: 8 }}>
         <span>Dan's Cool Home Page - Netscape Navigator 4.0</span>
         <span style={{ marginLeft: "auto", fontSize: 10, opacity: 0.7 }}>File  Edit  View  Go  Bookmarks</span>
@@ -50,6 +51,7 @@ export default function Explorer() {
           <div style={{ fontSize: 9, color: "gray", marginTop: 6 }}>© 2026 Dan Lee · This page is Netscape Now! compatible</div>
           <div style={{ fontSize: 9, color: "gray" }}>This site is a proud member of the GeoCities Singapore neighborhood</div>
         </center>
+      </div>
       </div>
     </div>
   );
