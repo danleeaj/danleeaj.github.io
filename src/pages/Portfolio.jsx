@@ -60,13 +60,13 @@ import Recursion from "../components/Recursion";
 import AvatarPin from "../components/AvatarPin";
 
 const MODES = [
-  { id: "home", label: "Home" },
-  { id: "jira", label: "Board" },
+  { id: "home", label: "Notion" },
+  { id: "jira", label: "Jira Board" },
   { id: "shell", label: "Shell" },
   // { id: "fairytale", label: "Tale" },
-  { id: "explorer", label: "Explorer" },
+  { id: "explorer", label: "HTML" },
   { id: "cv", label: "CV" },
-  { id: "recursion", label: "Recurse!?" },
+  { id: "recursion", label: "Recurse?" },
 ];
 
 export default function Portfolio() {
@@ -81,9 +81,74 @@ export default function Portfolio() {
           80%  { gap: 24px; }
           100% { gap: 22px; }
         }
+        .view-tab {
+          padding: 5px 12px;
+          font-size: 12.5px;
+          font-weight: 500;
+          color: #8a8884;
+          background: none;
+          border: 1px solid transparent;
+          border-radius: 6px;
+          cursor: pointer;
+          font-family: inherit;
+          transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+          white-space: nowrap;
+        }
+        .view-tab:hover {
+          color: #1a1a1a;
+          background: #f5f4f0;
+        }
+        .view-tab.active {
+          color: #1a1a1a;
+          background: white;
+          border-color: #e0ddd7;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .view-tabs-row {
+          display: flex;
+          align-items: center;
+          gap: 2px;
+          flex-wrap: nowrap;
+          padding-left: 12px;
+        }
+        .view-as-label {
+          font-size: 11.5px;
+          font-weight: 500;
+          color: #b4b1ab;
+          letter-spacing: 0.03em;
+          margin-right: 6px;
+          white-space: nowrap;
+          text-transform: lowercase;
+        }
+        .portfolio-header {
+          padding: 12px 22px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom: 1px solid #e8e6e1;
+          flex-shrink: 0;
+          overflow: visible;
+        }
+        @media (max-width: 800px) {
+          .portfolio-header {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 10px;
+            padding: 12px 16px;
+          }
+          .view-tabs-row {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            padding-bottom: 2px;
+          }
+          .view-tabs-row::-webkit-scrollbar { display: none; }
+          .view-tab { padding: 4px 10px; font-size: 11.5px; flex-shrink: 0; }
+          .view-as-label { font-size: 10.5px; margin-right: 4px; flex-shrink: 0; }
+        }
       `}</style>
       <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Jacquard+24&display=swap" rel="stylesheet" />
-      <div style={{ padding: "12px 22px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #e8e6e1", flexShrink: 0, overflow: "visible" }}>
+      <div className="portfolio-header">
         <div style={{ display: "flex", alignItems: "center", gap: pinExploded ? 20 : 12, overflow: "visible", animation: pinExploded ? "gap-bounce 0.5s ease forwards" : "none" }}>
           <AvatarPin onExplode={() => setPinExploded(true)} />
           <div>
@@ -96,24 +161,19 @@ export default function Portfolio() {
             </div>
           </div>
         </div>
-        <select
-          value={mode}
-          onChange={e => setMode(e.target.value)}
-          aria-label="View mode"
-          style={{
-            padding: "6px 28px 6px 12px", fontSize: 13, fontWeight: 500,
-            color: "#1a1a1a", background: "white", border: "1px solid #e0ddd7",
-            borderRadius: 8, cursor: "pointer", fontFamily: "inherit",
-            appearance: "none", WebkitAppearance: "none",
-            backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23888' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")",
-            backgroundRepeat: "no-repeat", backgroundPosition: "right 10px center",
-            boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
-          }}
-        >
+        <nav className="view-tabs-row" aria-label="View mode">
+          <span className="view-as-label">view as</span>
           {MODES.map(m => (
-            <option key={m.id} value={m.id}>{m.label}</option>
+            <button
+              key={m.id}
+              className={`view-tab${mode === m.id ? " active" : ""}`}
+              onClick={() => setMode(m.id)}
+              aria-pressed={mode === m.id}
+            >
+              {m.label}
+            </button>
           ))}
-        </select>
+        </nav>
       </div>
       <div style={{ flex: 1, margin: "16px 24px 24px", borderRadius: 2, border: "1px solid #e0ddd7", overflow: "auto", boxShadow: "0 2px 12px rgba(0,0,0,0.04), 0 0 0 1px rgba(0,0,0,0.02)", background: "white" }}>
         {mode === "home" && <Homepage />}
