@@ -51,7 +51,15 @@ function MarqueeText() {
 function CursorTrail() {
   const [particles, setParticles] = useState([]);
   const idRef = useRef(0);
+  const [isMobile, setIsMobile] = useState(() => window.matchMedia("(max-width: 640px)").matches);
   useEffect(() => {
+    const mq = window.matchMedia("(max-width: 640px)");
+    const onChange = (e) => setIsMobile(e.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+  useEffect(() => {
+    if (isMobile) return;
     const handler = (e) => {
       const id = idRef.current++;
       setParticles(p => [...p.slice(-12), { id, x: e.clientX / 1.25, y: e.clientY / 1.25, born: Date.now() }]);
@@ -61,7 +69,7 @@ function CursorTrail() {
       setParticles(p => p.filter(pt => Date.now() - pt.born < 600));
     }, 50);
     return () => { window.removeEventListener("mousemove", handler); clearInterval(cleanup); };
-  }, []);
+  }, [isMobile]);
   return (
     <div style={{ position: "fixed", inset: 0, pointerEvents: "none", zIndex: 9999 }}>
       {particles.map(p => {
